@@ -51,5 +51,52 @@ int main() {
 
 void processChoice(int choice, StringBinaryTree& tree)
 {
+    string code;
+    string newCode;
 
+    switch (choice)
+    {
+        case 1:
+        {
+            cout << "Enter the code to add: ";
+            getline(cin, code);
+            tree.insertNode(code);
+            cout << "Code added.\n";
+            break;
+        }
+        case 2:
+        {
+            cout << "Enter the code to delete: ";
+            getline(cin, code);
+            if (tree.searchNode(code))
+            {
+                tree.remove(code);
+                cout << "Code deleted.\n";
+            }
+            else
+                cout << "Code not found.\n";
+            break;
+        }
+        case 3:
+        {
+            cout << "Enter the code to search for: ";
+            getline(cin, code);
+            if (tree.searchNode(code))
+                cout << "Code found.\n";
+            else
+                cout << "Code not found.\n";
+            break;
+        }
+        case 4:
+        {
+            cout << "Enter the code to modify: ";
+            getline(cin, code);
+            if (tree.searchNode(code))
+            {
+                cout << "Enter a new code: ";
+                getline(cin, newCode);
+                tree.insertNode(newCode)
+            }
+        }
+    }
 }

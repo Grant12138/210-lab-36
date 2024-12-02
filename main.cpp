@@ -96,7 +96,36 @@ void processChoice(int choice, StringBinaryTree& tree)
                 cout << "Enter a new code: ";
                 getline(cin, newCode);
                 tree.insertNode(newCode)
+                cout << "Code modified.\n";
             }
+            else
+                cout << "Code not found.\n";
+            break;
         }
+        case 5:
+        {
+            cout << "Displaying codes in-order:\n";
+            tree.displayInOrder();
+            break;
+        }
+        case 6:
+        {
+            cout << "Displaying codes pre-order:\n";
+            tree.displayPreOrder();
+            break;
+        }
+        case 7:
+        {
+            cout << "Displaying codes post-order:\n";
+            tree.displayPostOrder();
+            break;
+        }
+        case 8:
+        {
+            cout << "Exiting the program...\n";
+            break;
+        }
+        default:
+            cout << "Invalid choice. Please try again.\n";
     }
 }

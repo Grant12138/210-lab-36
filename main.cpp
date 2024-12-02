@@ -12,8 +12,7 @@ void processChoice(int choice, StringBinaryTree& tree);
 void print_id(string const& lab_desc);
 
 int main() {
-
-    print_id("")
+    print_id("Lab 36: Records BST");
     StringBinaryTree tree;
 
     try
@@ -55,7 +54,14 @@ int main() {
 
     return 0;
 }
-
+/**************************************************************
+ * FUNCTION: processes the user's choice by invoking corresponding class methods
+ *
+ * @param choice
+ * @param tree
+ *
+ * @return NONE;
+ */
 void processChoice(int choice, StringBinaryTree& tree)
 {
     string code;

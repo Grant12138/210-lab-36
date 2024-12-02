@@ -1,12 +1,13 @@
 // Implementation file for the IntBinaryTree class
 #include <iostream>
-#include "IntBinaryTree.h"
+#include "StringBinaryTree.h"
 using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.
 // The function inserts the node into the tree pointed to by 
 // the TreeNode pointer. This function is called recursively.
-void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
+// This method simply needs to be renamed
+void StringBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
    if (!nodePtr)
       nodePtr = newNode;                  // Insert the node.
    else if (newNode->value < nodePtr->value)
@@ -16,8 +17,9 @@ void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 }
 
 // insertNode creates a new node to hold num as its value,
-// and passes it to the insert function.                  
-void IntBinaryTree::insertNode(int num) {
+// and passes it to the insert function.
+// This method's name and argument needs to be changed to reflect it works with string objects
+void StringBinaryTree::insertNode(const string& str) {
    TreeNode *newNode;      // Pointer to a new node.
 
    // Create a new node and store num in it.
@@ -30,8 +32,9 @@ void IntBinaryTree::insertNode(int num) {
 }
 
 // destroySubTree is called by the destructor. It
-// deletes all nodes in the tree.                
-void IntBinaryTree::destroySubTree(TreeNode *nodePtr) {
+// deletes all nodes in the tree.
+// We simply change the name of this method
+void StringBinaryTree::destroySubTree(TreeNode *nodePtr) {
    if (nodePtr) {
       if (nodePtr->left)
          destroySubTree(nodePtr->left);
@@ -44,8 +47,9 @@ void IntBinaryTree::destroySubTree(TreeNode *nodePtr) {
 
 // searchNode determines if a value is present in  
 // the tree. If so, the function returns true.     
-// Otherwise, it returns false.                    
-bool IntBinaryTree::searchNode(int num) {
+// Otherwise, it returns false.
+// We change the name and the argument of this method
+bool StringBinaryTree::searchNode(const string& str) {
    TreeNode *nodePtr = root;
 
    while (nodePtr)    {

@@ -13,16 +13,15 @@ int main() {
         ifstream fin("codes.txt");
         if (!fin.good())
             throw "I/O error";
+        string code;
+        while (getline(fin, code))
+            tree.insertNode(code);
+        fin.close();
     }
     catch(const char* e)
     {
         cout << e << "\n";
     }
-
-    string code;
-    while (getline(fin, code))
-        tree.insertNode(code);
-    fin.close();
 
     int choice;
     do
@@ -95,7 +94,7 @@ void processChoice(int choice, StringBinaryTree& tree)
             {
                 cout << "Enter a new code: ";
                 getline(cin, newCode);
-                tree.insertNode(newCode)
+                tree.insertNode(newCode);
                 cout << "Code modified.\n";
             }
             else
